@@ -2,3 +2,4 @@ Pillow
 tqdm 
 numpy
 progressbar
+requests
