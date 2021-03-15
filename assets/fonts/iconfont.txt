@@ -1,0 +1,3 @@
+icon  unicode
+email \ue628
+weibo \ue619
