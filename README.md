@@ -1,4 +1,6 @@
-# 4.2inch e-Paper Cloud Module墨水屏开发Demo
+# 4.2inch e-Paper Cloud Module 墨水屏开发Demo
+
+日历+毒鸡汤+天气预报
 
 ## 运行环境
 
@@ -8,7 +10,7 @@
 
 代码是在macOS上测试的，理论上其他平台也能跑，依赖模块见requirements.txt，通过pip安装依赖:
 
-`pip install -r requirements.txt`
+`python3 -m pip install -r requirements.txt`
 
 ## 数据API
 
