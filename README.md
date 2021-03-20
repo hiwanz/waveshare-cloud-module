@@ -5,8 +5,8 @@
 ## 运行环境
 
 - 硬件环境：[4.2inch e-Paper Cloud Module](https://www.waveshare.net/wiki/4.2inch_e-Paper_Cloud_Module)
-- 软件环境：Python3+Pip3
-- 系统环境：macOS Bigsur v11+
+- 运行环境：Python3+Pip3
+- 开发环境：macOS Bigsur v11+
 
 代码是在macOS上测试的，理论上其他平台也能跑，依赖模块见requirements.txt，通过pip安装依赖:
 
@@ -14,7 +14,7 @@
 
 ## 数据API
 
-代码中用到了：[彩云天气api](https://open.caiyunapp.com/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94_API_%E4%B8%80%E8%A7%88%E8%A1%A8)，[和风天气api](https://dev.qweather.com/docs/api/)和Alone88提供的[毒鸡汤api](https://v1.alapi.cn/api/soul)
+代码中用到了：[彩云天气API](https://open.caiyunapp.com/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94_API_%E4%B8%80%E8%A7%88%E8%A1%A8)，[高德API](https://developer.amap.com/)和Alone88提供的[毒鸡汤api](https://v1.alapi.cn/api/soul)
 
 项目中用到的API Key均从网上搜索得来，仅做学习用途，请勿商用，谢谢配合。
 
