@@ -40,7 +40,7 @@ class EPD:
             self.height = 250
         else :
             exit()
-    def getbuffer(self, image):
+    def get_buffer(self, image):
         buf = [0xFF] * (int(self.width/8) * self.height)
         image_monocolor = image.convert('1')
         imwidth, imheight = image_monocolor.size

@@ -104,7 +104,7 @@ class EDPServer(tcp_sver.tcp_sver):
 
             # Load an image file and display
             # landingImage = Image.open(get_assets('avatar.bmp'))
-            # self.flush_buffer(epd.getbuffer(landingImage))
+            # self.flush_buffer(epd.get_buffer(landingImage))
             http_data = http_req.get_http_data()
             soul = http_data.get_soul_info()
             weather_info = http_data.get_5day_weather_info()
@@ -124,7 +124,7 @@ class EDPServer(tcp_sver.tcp_sver):
             # draw bottom weather
             draw.line([(10, 240), (390, 240)], fill=0)
             draw_weather_forecast(draw, weather_info)
-            self.flush_buffer(epd.getbuffer(screen_image))
+            self.flush_buffer(epd.get_buffer(screen_image))
 
         except ConnectionResetError :
             self.write_log("lose connect.")
