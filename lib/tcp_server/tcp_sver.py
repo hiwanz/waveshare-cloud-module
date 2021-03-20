@@ -74,7 +74,7 @@ class tcp_sver(socketserver.BaseRequestHandler):
     width=0
     hight=0
     b_width=0
-    lenght=1024
+    length=1024
     history_file_name ="tcp.log"
     
     def set_size(self,w,h):
@@ -187,8 +187,8 @@ class tcp_sver(socketserver.BaseRequestHandler):
         pbar_cnt_loct=pbar_cnt
         progresser(pbar_cnt_loct,id,0) 
         
-        for i in range(0,math.ceil(self.size/self.lenght)):
-            leng=self.lenght
+        for i in range(0,math.ceil(self.size/self.length)):
+            leng=self.length
             addr=i*leng         
             num=(addr%4096)//leng
             data=struct.pack(">IIB",addr,leng,num)
@@ -197,7 +197,7 @@ class tcp_sver(socketserver.BaseRequestHandler):
             for j in range(0,leng):
                 data=data+[0xff]
             self.send_data(data)
-            pbar_num=int((i/math.ceil(self.size/self.lenght))*100)
+            pbar_num=int((i/math.ceil(self.size/self.length))*100)
             progresser(pbar_cnt_loct,id,pbar_num)
         data=[0,0,0,0,0,0,0,0,0,0,0]
         self.send_data(data)
@@ -216,8 +216,8 @@ class tcp_sver(socketserver.BaseRequestHandler):
             os.system("clear")
         pbar_cnt_loct=pbar_cnt
         progresser(pbar_cnt_loct,id,0) 
-        for i in range(0,math.ceil(self.size/self.lenght)):
-            leng=self.lenght
+        for i in range(0,math.ceil(self.size/self.length)):
+            leng=self.length
             addr=i*leng         
             num=(addr%4096)//leng
             data=struct.pack(">IIB",addr,leng,num)
@@ -229,7 +229,7 @@ class tcp_sver(socketserver.BaseRequestHandler):
                 else:
                     data=data+[0xFF]
             
-            pbar_num=int((i/math.ceil(self.size/self.lenght))*100)
+            pbar_num=int((i/math.ceil(self.size/self.length))*100)
             progresser(pbar_cnt_loct,id,pbar_num)
             self.send_data(data)            
         data=[0,0,0,0,0,0,0,0,0,0,0]
@@ -246,11 +246,11 @@ class tcp_sver(socketserver.BaseRequestHandler):
         pbar = ProgressBar().start()
         i=0
         starttime = time.time()
-        for i in range(0,math.ceil(fsize/self.lenght)):      
-            c= file.read(self.lenght)
+        for i in range(0,math.ceil(fsize/self.length)):      
+            c= file.read(self.length)
             ssss = str(binascii.b2a_hex(c))[2:-1]
             self.client.sendall(bytes().fromhex(ssss))
-            pbar.update(int(100*i*self.lenght/fsize))
+            pbar.update(int(100*i*self.length/fsize))
             i=i+1
         file.close()  
         endtime = time.time()
