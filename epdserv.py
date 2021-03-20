@@ -2,14 +2,12 @@
 # -*- coding:utf-8 -*-
 
 import os
-import sys
 import socketserver
 import logging
 import time
 import textwrap
 from PIL import ImageDraw
 from PIL import ImageFont
-from PIL import ImageColor
 from PIL import Image
 from lib.waveshare_epd import waveshare_epd
 from lib.tcp_server import tcp_sver

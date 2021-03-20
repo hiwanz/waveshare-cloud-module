@@ -1,5 +1,4 @@
 Pillow
-tqdm 
-numpy
+tqdm
 progressbar
 requests
