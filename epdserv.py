@@ -17,6 +17,8 @@ from lib.http_req import http_req
 
 logging.basicConfig(level=logging.INFO)
 
+need_refresh = True
+
 WEATHER_TEXT = {
     'CLEAR_DAY': 'B',
     'CLEAR_NIGHT': 'C',
@@ -80,13 +82,24 @@ def draw_weather_forecast(draw, weather_info):
         draw.text((text_l, 280), time.strftime('%m-%d',time.strptime(weather_info[index]['date'],'%Y-%m-%dT%H:%M+08:00')), font = english_text_font(20), fill = 0)
 
 class EDPServer(tcp_sver.tcp_sver):
+    # Handle client request
     def handle(self):
-        # Refresh in 5min
-        if int(time.strftime("%M", time.localtime()))%5 != 0:
+        global need_refresh
+        # Keep connection and refresh in 5min
+        current_minute = int(time.strftime("%M", time.localtime()))
+        if current_minute%5 != 0:
+            need_refresh = True
+            self.client = self.request
+            self.get_id()
+            return
+        elif not need_refresh:
+            self.client = self.request
+            self.get_id()
             return
         try:
+            need_refresh = False
             self.client = self.request
-            self.get_id()  
+            self.get_id()
             self.unlock('123456')
             epd = waveshare_epd.EPD(4.2)
             self.set_size(epd.width,epd.height)
@@ -101,9 +114,9 @@ class EDPServer(tcp_sver.tcp_sver):
             screen_image = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
             draw = ImageDraw.Draw(screen_image)
             # draw top status bar
-            draw.text((0, 0), time.strftime("%Y-%m-%d %A", time.localtime()), font = english_text_font(20), fill = 0)
-            draw.text((155, 0), WEATHER_TEXT[weather_info[0]['weather']], font = custom_weather_icon_font(24), fill = 0)
-            draw.text((185, 0), '%s°C' % weather_info[0]['temperature'], font = english_text_font(20), fill = 0)
+            draw.text((0, 0), time.strftime("%Y-%m-%d %a", time.localtime()), font = english_text_font(20), fill = 0)
+            draw.text((135, 0), WEATHER_TEXT[weather_info[0]['weather']], font = custom_weather_icon_font(24), fill = 0)
+            draw.text((170, 0), '%s°C' % weather_info[0]['temperature'], font = english_text_font(20), fill = 0)
             draw.text((340, 0), u'\ue619', font = custom_icon_font(24), fill = 0)
             draw.text((370, 0), u'\ue628', font = custom_icon_font(24), fill = 0)
             # draw middle content

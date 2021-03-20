@@ -12,10 +12,10 @@ class get_http_data():
             'Content-Type': 'application/json',
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
         }
-        location_url = 'https://geoapi.qweather.com/v2/city/lookup?adm=%s&location=%s&key=f3488e987bce466d8ae6b523becf278f' % location
+        location_url = 'http://restapi.amap.com/v3/geocode/geo?key=73832f0792532300af11b193225c10bb&city=%s&address=%s' % location
         json_data = requests.get(location_url, headers = self.headers)
         json_data = json_data.json()
-        self.gps = '%s,%s' % (json_data['location'][0]['lon'], json_data['location'][0]['lat'])
+        self.gps = json_data['geocodes'][0]['location']
 
     def get_5day_weather_info(self):
         self.url = 'https://api.caiyunapp.com/v2.5/ghbkeChNeRd8bvF4/%s/weather.json' % self.gps
