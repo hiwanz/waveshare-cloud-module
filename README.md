@@ -28,4 +28,4 @@ python3 epdserv.py
 
 唤醒模块后运行效果如下：
 
-![demo](https://user-images.githubusercontent.com/338102/111144097-90d51c80-85c1-11eb-955e-6d58c6f0a148.jpg)
+![demo](demo.jpg)
