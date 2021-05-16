@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import os
+import signal
 import socketserver
 import logging
 import time
@@ -144,3 +145,4 @@ if __name__ == "__main__":
         server.serve_forever()
     except KeyboardInterrupt:
         server.shutdown()
+        os.kill(os.getpid(), signal.SIGTERM)
