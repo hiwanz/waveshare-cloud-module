@@ -32,7 +32,7 @@ python3 epdserv.py
 
 ```bash
 docker pull hiwanz/waveshare-epaper-cloud
-docker run -d -it -p 6868:6868 --name myepaperdemo hiwanz/waveshare-epaper-cloud
+docker run -d -it -p 6868:6868 --restart=unless-stopped --name myepaperdemo hiwanz/waveshare-epaper-cloud
 ```
 
 唤醒模块后运行效果如下：
