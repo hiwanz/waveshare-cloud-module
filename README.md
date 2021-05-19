@@ -5,7 +5,7 @@
 ## 运行环境
 
 - 硬件环境：[4.2inch e-Paper Cloud Module](https://www.waveshare.net/wiki/4.2inch_e-Paper_Cloud_Module)
-- 运行环境：Python3+Pip3
+- 运行环境：Python3+pip3
 - 开发环境：macOS Bigsur v11+
 
 代码是在macOS上测试的，理论上其他平台也能跑，依赖模块见requirements.txt，通过pip安装依赖:
@@ -24,6 +24,15 @@
 
 ```python
 python3 epdserv.py
+```
+
+## Docker容器部署
+
+如果你打算采用docker容器的方式部署，可以使用以下命令运行容器
+
+```bash
+docker pull hiwanz/waveshare-epaper-cloud
+docker run -d -it -p 6868:6868 --name myepaperdemo hiwanz/waveshare-epaper-cloud
 ```
 
 唤醒模块后运行效果如下：
