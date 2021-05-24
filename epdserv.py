@@ -116,8 +116,7 @@ class EDPServer(tcp_sver.tcp_sver):
             draw.text((0, 0), time.strftime("%Y-%m-%d %a", time.localtime()), font = english_text_font(20), fill = 0)
             draw.text((135, 0), WEATHER_TEXT[weather_info[0]['weather']], font = custom_weather_icon_font(24), fill = 0)
             draw.text((170, 0), '%s°C' % weather_info[0]['temperature'], font = english_text_font(20), fill = 0)
-            draw.text((340, 0), u'\ue619', font = custom_icon_font(24), fill = 0)
-            draw.text((370, 0), u'\ue628', font = custom_icon_font(24), fill = 0)
+            draw.text((370, 0), u'\ue51b', font = custom_icon_font(24), fill = 0)
             # draw middle content
             draw_center_text(draw, 50, time.strftime("%d", time.localtime()), 72)
             draw_center_text(draw, 140, WEEK_DAY[int(time.strftime("%w", time.localtime()))], 24)
