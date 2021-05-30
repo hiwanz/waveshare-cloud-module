@@ -1,5 +1,11 @@
+# Ignore docker and environment files:
+**/Dockerfile
+docker-compose.yml
+**/*.env
+.dockerignore
 .vscode
 holder
-*/__pycache__
+**/__pycache__
+**/.DS_Store
 *.log
 *.md
