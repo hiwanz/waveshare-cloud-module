@@ -42,7 +42,7 @@ WEATHER_TEXT = {
 WEEK_DAY = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
 
 def get_assets(filename):
-    return os.path.abspath(os.path.dirname(__file__))+os.path.join('/assets', filename)
+    return os.path.join(os.path.abspath(os.path.dirname(__file__)), 'assets', filename)
 
 def custom_icon_font(size):
     return ImageFont.truetype(get_assets('fonts/iconfont.ttf'), size)
