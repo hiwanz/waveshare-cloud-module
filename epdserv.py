@@ -84,9 +84,9 @@ class EDPServer(tcp_sver.tcp_sver):
     # Handle client request
     def handle(self):
         global need_refresh
-        # Keep connection and refresh in 5min
+        # Keep connection and refresh in 2min
         current_minute = int(time.strftime("%M", time.localtime()))
-        if current_minute%5 != 0:
+        if current_minute%2 != 0:
             need_refresh = True
             self.client = self.request
             self.get_id()
