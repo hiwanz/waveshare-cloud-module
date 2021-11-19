@@ -28,8 +28,8 @@ class get_http_data():
         return daily_weather_info
 
     def get_soul_info(self):
-        self.url = 'https://v1.alapi.cn/api/soul'
+        self.url = 'https://api.muxiaoguo.cn/api/dujitang'
         json_data = requests.get(self.url, headers = self.headers)
         json_data = json_data.json()
         
-        return json_data['data']['title']
+        return json_data['data']['comment']

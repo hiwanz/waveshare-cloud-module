@@ -14,7 +14,7 @@
 
 ## 数据API
 
-代码中用到了：[彩云天气API](https://open.caiyunapp.com/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94_API_%E4%B8%80%E8%A7%88%E8%A1%A8)，[高德API](https://developer.amap.com/)和Alone88提供的[毒鸡汤api](https://v1.alapi.cn/api/soul)
+代码中用到了：[彩云天气API](https://open.caiyunapp.com/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94_API_%E4%B8%80%E8%A7%88%E8%A1%A8)，[高德API](https://developer.amap.com/)和木小果提供的[毒鸡汤API](https://api.muxiaoguo.cn/api/dujitang)
 
 项目中用到的API Key均从网上搜索得来，仅做学习用途，请勿商用，谢谢配合。
 
