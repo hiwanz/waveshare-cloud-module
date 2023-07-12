@@ -28,8 +28,8 @@ class get_http_data():
         return daily_weather_info
 
     def get_soul_info(self):
-        self.url = 'https://api.muxiaoguo.cn/api/dujitang'
+        self.url = 'https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json'
         json_data = requests.get(self.url, headers = self.headers)
         json_data = json_data.json()
         
-        return json_data['data']['comment']
+        return json_data['text']
