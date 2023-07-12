@@ -2,6 +2,8 @@
 **/Dockerfile
 docker-compose.yml
 **/*.env
+.git*
+.gitkeep
 .dockerignore
 .vscode
 holder
